@@ -1,4 +1,4 @@
-type BookType = {
+type BooksType = {
   title: string;
   subtitle?: string;
   isbn13: number;
@@ -7,4 +7,4 @@ type BookType = {
   url: string;
 };
 
-export default BookType;
+export default BooksType;

@@ -1,11 +1,34 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+import { ReactComponent as LogoIcon } from "../../assets/logo.svg";
+
 import "./Header.scss";
 
-type PropsType = {
-  title: string;
-};
+const LINKS = [
+  { url: "/newbooks", text: "New Books" },
+  { url: "/allbooks", text: "All Books" },
+];
 
-const Header = ({ title = "Hello, world" }: PropsType) => {
-  return <h1 className="title_style">{title}</h1>;
+const Header: React.FC = () => {
+  return (
+    <nav className="header-container">
+      <div className="logo">
+        {/* <LogoIcon /> */}
+        <div className="app-name">Bookshop</div>
+      </div>
+
+      <ul className="links">
+        {LINKS.map(({ url, text }) => (
+          <li key={url + text}>
+            <NavLink to={url} className={({ isActive }) => (isActive ? "_active" : "")}>
+              {text}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 };
 
 export default Header;

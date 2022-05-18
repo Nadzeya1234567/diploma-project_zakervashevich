@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import BooksType from "../../../types/booksType";
+import Image from "../../image/Image";
+import "./AllBooksCard.scss";
+
+type PropsType = {
+  data: BooksType;
+};
+
+const AllBooksCard: React.FC<PropsType> = ({ data }) => {
+  return (
+    <div className="book-card-container">
+      <Image src={data.image} />
+
+      <Link to={`/allbooks/${data.isbn13}`}>
+        <div className="title">{data.title}</div>
+      </Link>
+
+      <div className="price">{data.price}</div>
+    </div>
+  );
+};
+
+export default AllBooksCard;
