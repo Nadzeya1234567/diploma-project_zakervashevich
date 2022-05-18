@@ -1,0 +1,63 @@
+.book-card-container {
+  padding: 24px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 200px;
+  max-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .image-wrap {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color0);
+  }
+  .image {
+    width: 100%;
+  }
+  .image-placeholder {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-color: #03a9f4;
+    position: relative;
+
+    div {
+      background: linear-gradient(to right, #03a9f4, white, #03a9f4);
+      position: absolute;
+      height: 1px;
+
+      &:first-child {
+        top: 40%;
+        left: 10%;
+        right: 20%;
+      }
+      &:last-child {
+        top: 60%;
+        left: 20%;
+        right: 10%;
+      }
+    }
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #424242;
+  }
+  .text {
+    font-size: 18px;
+    margin-bottom: 24px;
+    color: #424242;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  .price {
+    font-size: 16px;
+    color: #0091ea;
+  }
+}
