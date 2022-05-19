@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Header from "./component/header/Header";
-//import Login from "./component/login/Login";
-//import Registration from "./component/registration/Registration";
-//import PostPage from "./component/postPage/PostPage";
 
 import "./App.css";
 
-import AllBooks from "./component/books/AllBooks";
+import Books from "./component/books/Books";
 import BookPage from "./component/bookPage/BookPage";
 import NewBooks from "./component/books/NewBooks";
 
@@ -26,7 +23,7 @@ const App: React.FC = () => {
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
               <Route path="/allbooks">
-                <Route index element={<AllBooks />} />
+                <Route index element={<Books />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
               {/*  переадресация */}

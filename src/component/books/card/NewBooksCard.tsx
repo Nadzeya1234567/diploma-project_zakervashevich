@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import BooksType from "../../../types/booksType";
 
 import Image from "../../image/Image";
-import "./AllBooksCard.scss";
+import "./BooksCard.scss";
 
 type PropsType = {
   data: BooksType;

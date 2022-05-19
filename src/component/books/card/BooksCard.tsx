@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BooksType from "../../../types/booksType";
 import Image from "../../image/Image";
-import "./AllBooksCard.scss";
+import "./BooksCard.scss";
 
 type PropsType = {
   data: BooksType;
 };
 
-const AllBooksCard: React.FC<PropsType> = ({ data }) => {
+const BooksCard: React.FC<PropsType> = ({ data }) => {
   return (
     <div className="book-card-container">
       <Image src={data.image} />
@@ -22,4 +22,4 @@ const AllBooksCard: React.FC<PropsType> = ({ data }) => {
   );
 };
 
-export default AllBooksCard;
+export default BooksCard;

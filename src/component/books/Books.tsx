@@ -1,15 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BooksType from "../../types/booksType";
-import NewBooksCard from "./card/NewBooksCard";
+import BooksCard from "./card/BooksCard";
 
-import "./AllBooks.scss";
+import "./Books.scss";
 
 type PropsType = {};
 
 const URL = "https://api.itbook.store/1.0/search/mongodb";
 
-const AllBooks: React.FC<PropsType> = () => {
+const Books: React.FC<PropsType> = () => {
   const [books, setBooks] = useState<BooksType[]>([]);
   //мы должны явно указать тип массива,т.к.ts не понимает
   const [loading, setLoading] = useState(false);
@@ -42,7 +41,7 @@ const AllBooks: React.FC<PropsType> = () => {
   return (
     <div className="books-container">
       {books.map((item) => (
-        <NewBooksCard key={item.isbn13} data={item} />
+        <BooksCard key={item.isbn13} data={item} />
       ))}
       {loading && "Loading..."}
       {error && "Error :-("}
@@ -50,4 +49,4 @@ const AllBooks: React.FC<PropsType> = () => {
   );
 };
 
-export default AllBooks;
+export default Books;

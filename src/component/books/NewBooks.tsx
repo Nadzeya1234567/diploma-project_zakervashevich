@@ -1,9 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BooksType from "../../types/booksType";
 import BooksCard from "./card/NewBooksCard";
 
-import "./NewBooks.scss";
+import "./Books.scss";
 
 type PropsType = {};
 
