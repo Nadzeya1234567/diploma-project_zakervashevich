@@ -49,13 +49,20 @@ const BookPage: React.FC = () => {
   }
 
   return (
-    <div className="book-card-container">
+    <div className="bookpage-container">
       <Image src={book.image} />
 
       <div className="title">{book.title}</div>
       <div className="subtitle">{book.subtitle}</div>
-      <div className="price">{book.price}</div>
-      <div className="url">{book.url}</div>
+      <div className="book-details-wrap">
+        <div className="authors">Authors: {book.authors}</div>
+        <div className="publisher">Publisher: {book.publisher}</div>
+        <div className="description">{book.desc}</div>
+        <div className="pages">Pages: {book.pages} </div>
+        <div className="year">Year: {book.year}</div>
+        <div className="rating">Rating: {book.rating}</div>
+        <div className="price">Price: {book.price}</div>
+      </div>
     </div>
   );
 };
