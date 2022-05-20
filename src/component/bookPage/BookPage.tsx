@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import BooksType from "../../types/booksType";
-import BooksCard from "../books/card/NewBooksCard";
 import Image from "../image/Image";
 
 import "./BookPage.scss";

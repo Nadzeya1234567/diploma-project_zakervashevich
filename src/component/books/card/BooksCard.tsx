@@ -13,7 +13,7 @@ const BooksCard: React.FC<PropsType> = ({ data }) => {
     <div className="book-card-container">
       <Image src={data.image} />
 
-      <Link to={`/allbooks/${data.isbn13}`}>
+      <Link to={`/books/${data.isbn13}`}>
         <div className="title">{data.title}</div>
       </Link>
 

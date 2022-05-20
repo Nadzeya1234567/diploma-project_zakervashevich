@@ -22,13 +22,13 @@ const App: React.FC = () => {
                 <Route index element={<NewBooks />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
-              <Route path="/allbooks">
+              <Route path="/books">
                 <Route index element={<Books />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
               {/*  переадресация */}
-              {/* <Route path="*" element={<Navigate to={"/newbooks"} />} /> */}
-              {/*  <Route path="*" element={<Posts />} /> */}
+              <Route path="*" element={<Navigate to={"/books"} />} />
+              <Route path="*" element={<Books />} />
             </Routes>
           </div>
         </div>
