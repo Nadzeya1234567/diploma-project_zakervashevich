@@ -2,8 +2,6 @@ import BooksType from "../types/booksType";
 import BooksFilterType from "../types/BooksFilterType";
 import useRequest from "./useRequest";
 
-//import useRequest from "./useRequest";
-
 const URL = "https://api.itbook.store/1.0/search";
 
 type ResponseType = {
@@ -15,8 +13,8 @@ const defValue: ResponseType = {
   total: 0,
   books: [],
 };
-const useBooks = ({ query, page }: BooksFilterType) => {
-  const url = `${URL}/${query}/${page}`;
+const useBooks = ({ page, limit }: BooksFilterType) => {
+  const url = `${URL}/the/${page}`;
   const { data, loading, error } = useRequest<ResponseType>(defValue, url);
 
   return { data, loading, error };

@@ -1,46 +1,29 @@
 import React, { useEffect, useState } from "react";
-import BooksType from "../../types/booksType";
 import BooksCard from "./card/BooksCard";
+import useBooks from "../../apiHooks/useBooks";
+import BooksFilter from "./BooksFilter";
 
 import "./Books.scss";
+import BooksFilterType from "../../types/BooksFilterType";
+import TextField from "../ui/textField/TextField";
 
 type PropsType = {};
 
-const URL = "https://api.itbook.store/1.0/search/mongodb";
+//const URL = "https://api.itbook.store/1.0/search/mongodb";
 
 const Books: React.FC<PropsType> = () => {
-  const [books, setBooks] = useState<BooksType[]>([]);
-  //мы должны явно указать тип массива,т.к.ts не понимает
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [filter, setFilter] = useState<BooksFilterType>({
+    page: 1,
+    limit: 10,
+  });
 
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(fetchData, 1000);
-  }, []);
-
-  const fetchData = () => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data) => {
-        const books = data.books as BooksType[];
-        setBooks(books);
-      })
-      .catch(() => {
-        setError(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+  const { data, loading, error } = useBooks(filter);
 
   return (
     <div className="books-container">
-      {books.map((item) => (
+      <BooksFilter total={data.total} filter={filter} setFilter={setFilter} />
+
+      {data.books.map((item) => (
         <BooksCard key={item.isbn13} data={item} />
       ))}
       {loading && "Loading..."}

@@ -1,6 +1,7 @@
 type BooksFilterType = {
-  query: string;
   page: number;
+  limit: number;
+  title?: string;
 };
 
 export default BooksFilterType;
