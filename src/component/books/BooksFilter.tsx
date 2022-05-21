@@ -16,10 +16,11 @@ type PropsType = {
 
 const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   const setSearchBooks = (value: string) => {
-    const query = value !== "" ? value : "";
+    //console.log(search);
+    const search = value !== "" ? value : "";
     setFilter((prevValue) => ({
       ...prevValue,
-      query,
+      search,
     }));
   };
 
@@ -40,7 +41,7 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
 
   return (
     <div className="posts-container">
-      <TextField label="Search books" value={filter.title?.toString()} setValue={setSearchBooks} />
+      <TextField label="Search books" value={filter.search?.toString()} setValue={setSearchBooks} />
 
       <Select label="Items per page" value={filter.limit.toString()} onChange={handleChangeLimit}>
         <MenuItem value={10}>Ten</MenuItem>

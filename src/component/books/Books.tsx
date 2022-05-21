@@ -16,7 +16,6 @@ const Books: React.FC<PropsType> = () => {
     page: 1,
     limit: 10,
   });
-
   const { data, loading, error } = useBooks(filter);
 
   return (
