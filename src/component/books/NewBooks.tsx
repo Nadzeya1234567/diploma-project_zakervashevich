@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BooksType from "../../types/booksType";
 import BooksCard from "./card/NewBooksCard";
+import { Pagination } from "@mui/material";
 
 import "./Books.scss";
 
@@ -9,6 +10,8 @@ type PropsType = {};
 const URL = "https://api.itbook.store/1.0";
 
 const NewBooks: React.FC<PropsType> = () => {
+  const [page, setPage] = useState(1);
+
   const [books, setBooks] = useState<BooksType[]>([]);
   //мы должны явно указать тип массива,т.к.ts не понимает
   const [loading, setLoading] = useState(false);
@@ -38,13 +41,22 @@ const NewBooks: React.FC<PropsType> = () => {
       });
   };
 
+  useEffect(() => {
+    console.log(page);
+  }, [page]);
+
   return (
-    <div className="books-container">
-      {books.map((item) => (
-        <BooksCard key={item.isbn13} data={item} />
-      ))}
-      {loading && "Loading..."}
-      {error && "Error :-("}
+    <div>
+      <div>
+        <Pagination className="pagination" count={2} page={page} onChange={(event, value: number) => setPage(value)} />
+      </div>
+      <div className="books-container">
+        {books.map((item) => (
+          <BooksCard key={item.isbn13} data={item} />
+        ))}
+        {loading && "Loading..."}
+        {error && "Error :-("}
+      </div>
     </div>
   );
 };
