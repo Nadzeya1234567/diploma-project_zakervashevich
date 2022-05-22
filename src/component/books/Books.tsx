@@ -8,8 +8,6 @@ import "./Books.scss";
 
 type PropsType = {};
 
-//const URL = "https://api.itbook.store/1.0/search/mongodb";
-
 const Books: React.FC<PropsType> = () => {
   const [filter, setFilter] = useState<BooksFilterType>({
     page: 1,
@@ -18,14 +16,16 @@ const Books: React.FC<PropsType> = () => {
   const { data, loading, error } = useBooks(filter);
 
   return (
-    <div className="books-container">
+    <div className="books-wrap">
       <BooksFilter total={data.total} filter={filter} setFilter={setFilter} />
 
-      {data.books.map((item) => (
-        <BooksCard key={item.isbn13} data={item} />
-      ))}
-      {loading && "Loading..."}
-      {error && "Error :-("}
+      <div className="books-container">
+        {data.books.map((item) => (
+          <BooksCard key={item.isbn13} data={item} />
+        ))}
+        {loading && "Loading..."}
+        {error && "Error :-("}
+      </div>
     </div>
   );
 };

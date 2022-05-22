@@ -7,7 +7,7 @@ import "./Header.scss";
 
 const LINKS = [
   { url: "/newbooks", text: "New Books" },
-  { url: "/books", text: "All Books" },
+  { url: "/books", text: "Search Books" },
 ];
 
 const Header: React.FC = () => {

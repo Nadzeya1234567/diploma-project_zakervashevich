@@ -12,15 +12,7 @@ type PropsType = {
   setFilter: (callback: (v: BooksFilterType) => BooksFilterType) => void;
 };
 
-const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
-  const setSearchBooks = (value: string) => {
-    const search = value !== "" ? value : "";
-    setFilter((prevValue) => ({
-      ...prevValue,
-      search,
-    }));
-  };
-
+const NewBooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   const handleChangeLimit = (event: SelectChangeEvent) => {
     setFilter((prevValue) => ({
       ...prevValue,
@@ -38,12 +30,9 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
 
   return (
     <div className="filter-container">
-      <TextField label="Search books" value={filter.search?.toString()} setValue={setSearchBooks} />
-
       <Select label="Items per page" value={filter.limit.toString()} onChange={handleChangeLimit}>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
       </Select>
 
       <Pagination page={filter.page} onChange={handleChangePage} count={Math.ceil(total / filter.limit)} />
@@ -51,4 +40,4 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   );
 };
 
-export default BooksFilter;
+export default NewBooksFilter;
