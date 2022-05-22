@@ -46,7 +46,12 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
         <MenuItem value={30}>Thirty</MenuItem>
       </Select>
 
-      <Pagination className="pagination" page={filter.page} onChange={handleChangePage} count={Math.ceil(total / 10)} />
+      <Pagination
+        className="pagination"
+        page={filter.page}
+        onChange={handleChangePage}
+        count={Math.ceil(total / filter.limit)}
+      />
     </div>
   );
 };

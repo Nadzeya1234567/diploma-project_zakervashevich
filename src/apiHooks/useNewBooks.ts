@@ -13,7 +13,7 @@ const defValue: ResponseType = {
   total: 0,
   books: [],
 };
-const useNewBooks = ({ page, search }: BooksFilterType) => {
+const useNewBooks = () => {
   const url = `${URL}/new`;
 
   const { data, loading, error } = useRequest<ResponseType>(defValue, url);
