@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import BooksCard from "./card/BooksCard";
 import useBooks from "../../apiHooks/useBooks";
 import BooksFilter from "./BooksFilter";
+import BooksFilterType from "../../types/BooksFilterType";
 
 import "./Books.scss";
-import BooksFilterType from "../../types/BooksFilterType";
-import TextField from "../ui/textField/TextField";
 
 type PropsType = {};
 

@@ -12,7 +12,7 @@ type PropsType = {
   setFilter: (callback: (v: BooksFilterType) => BooksFilterType) => void;
 };
 
-const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
+const NewBooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   const setSearchBooks = (value: string) => {
     const search = value !== "" ? value : "";
     setFilter((prevValue) => ({
@@ -51,4 +51,4 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   );
 };
 
-export default BooksFilter;
+export default NewBooksFilter;

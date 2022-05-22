@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import BooksType from "../../types/booksType";
 import Image from "../image/Image";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 import "./BookPage.scss";
 
@@ -59,7 +61,10 @@ const BookPage: React.FC = () => {
         <div className="description">{book.desc}</div>
         <div className="pages">Pages: {book.pages} </div>
         <div className="year">Year: {book.year}</div>
-        <div className="rating">Rating: {book.rating}</div>
+        <div className="rating">
+          <Typography component="legend"></Typography>
+          <Rating name="read-only" value={book.rating} readOnly />
+        </div>
         <div className="price">Price: {book.price}</div>
       </div>
     </div>

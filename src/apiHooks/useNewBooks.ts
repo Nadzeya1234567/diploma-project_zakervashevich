@@ -13,12 +13,12 @@ const defValue: ResponseType = {
   total: 0,
   books: [],
 };
-const useBooks = ({ page, search }: BooksFilterType) => {
-  const url = `${URL}/search/${search}/${page}`;
+const useNewBooks = ({ page, search }: BooksFilterType) => {
+  const url = `${URL}/new`;
 
   const { data, loading, error } = useRequest<ResponseType>(defValue, url);
 
   return { data, loading, error };
 };
 
-export default useBooks;
+export default useNewBooks;

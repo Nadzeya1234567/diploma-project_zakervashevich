@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     <nav className="header-container">
       <div className="logo">
         {/* <LogoIcon /> */}
-        <div className="app-name">Bookshop</div>
+        <div className="app-name">BookStore</div>
       </div>
 
       <ul className="links">
