@@ -40,7 +40,12 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
     <div className="filter-container">
       <TextField label="Search books" value={filter.search?.toString()} setValue={setSearchBooks} />
 
-      <Select label="Items per page" value={filter.limit.toString()} onChange={handleChangeLimit}>
+      <Select
+        className="select-search"
+        label="Items per page"
+        value={filter.limit.toString()}
+        onChange={handleChangeLimit}
+      >
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
