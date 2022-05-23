@@ -14,7 +14,7 @@ type PropsType = {
 
 const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   const setSearchBooks = (value: string) => {
-    const search = value !== "" ? value : "";
+    const search = value !== "" ? value : undefined;
     setFilter((prevValue) => ({
       ...prevValue,
       search,

@@ -3,7 +3,6 @@ import { useLocation, useParams } from "react-router-dom";
 import BooksType from "../../types/booksType";
 import Image from "../image/Image";
 import Rating from "@mui/material/Rating";
-import Typography from "@mui/material/Typography";
 
 import "./BookPage.scss";
 
@@ -15,7 +14,7 @@ const BookPage: React.FC = () => {
   const [error, setError] = useState(false);
   const { isbn13 } = useParams();
 
-  const x = useLocation();
+  //const x = useLocation();
 
   useEffect(() => {
     fetchData();
@@ -62,7 +61,6 @@ const BookPage: React.FC = () => {
         <div className="pages">Pages: {book.pages} </div>
         <div className="year">Year: {book.year}</div>
         <div className="rating">
-          <Typography component="legend"></Typography>
           <Rating name="read-only" value={book.rating} readOnly />
         </div>
         <div className="price">Price: {book.price}</div>

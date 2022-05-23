@@ -16,7 +16,6 @@ const BooksCard: React.FC<PropsType> = ({ data }) => {
       <Link to={`/books/${data.isbn13}`}>
         <div className="title">{data.title}</div>
       </Link>
-
       <div className="price">{data.price}</div>
     </div>
   );
