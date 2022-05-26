@@ -61,7 +61,7 @@ const BookPage: React.FC = () => {
         <div className="pages">Pages: {book.pages} </div>
         <div className="year">Year: {book.year}</div>
         <div className="rating">
-          <Rating name="read-only" value={book.rating} readOnly />
+          <Rating name="read-only" value={Number(book.rating)} readOnly />
         </div>
         <div className="price">Price: {book.price}</div>
       </div>

@@ -5,12 +5,12 @@ import useRequest from "./useRequest";
 const URL = "https://api.itbook.store/1.0";
 
 type ResponseType = {
-  total: number;
+  total: string;
   books: BooksType[];
 };
 
 const defValue: ResponseType = {
-  total: 0,
+  total: "0",
   books: [],
 };
 const useBooks = ({ page, search }: BooksFilterType) => {

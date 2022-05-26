@@ -7,7 +7,7 @@ import TextField from "../ui/textField/TextField";
 import "./Books.scss";
 
 type PropsType = {
-  total: number;
+  total: string;
   filter: BooksFilterType;
   setFilter: (callback: (v: BooksFilterType) => BooksFilterType) => void;
 };
@@ -51,7 +51,7 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
         <MenuItem value={30}>Thirty</MenuItem>
       </Select>
 
-      <Pagination page={filter.page} onChange={handleChangePage} count={Math.ceil(total / filter.limit)} />
+      <Pagination page={filter.page} onChange={handleChangePage} count={Math.ceil(Number(total) / filter.limit)} />
     </div>
   );
 };

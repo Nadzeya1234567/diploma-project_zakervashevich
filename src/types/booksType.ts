@@ -1,16 +1,16 @@
 type BooksType = {
   title: string;
   subtitle: string;
-  isbn13: number;
-  price: number;
+  isbn13: string;
+  price: string;
   image?: string;
   url: string;
 
   authors?: string;
   publisher?: string;
-  pages?: number;
-  year?: number;
-  rating?: number;
+  pages?: string;
+  year?: string;
+  rating?: string;
   desc?: string;
   pdf?: {
     [prop: string]: string;
