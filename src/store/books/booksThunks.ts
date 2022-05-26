@@ -7,7 +7,7 @@ const URL = "https://api.itbook.store/1.0";
 
 type FetchBooksType = {
   data: BooksType[];
-  total: number;
+  total: string;
 };
 
 export const fetchBooks = createAsyncThunk<FetchBooksType, BooksFilterType, { rejectValue: string }>(
@@ -20,7 +20,7 @@ export const fetchBooks = createAsyncThunk<FetchBooksType, BooksFilterType, { re
       console.log(response);
       return {
         data: response.data.books as BooksType[],
-        total: response.data.total as number,
+        total: response.data.total as string,
       };
     } catch {
       return thunkApi.rejectWithValue("Server error!!!");

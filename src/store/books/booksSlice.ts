@@ -4,14 +4,14 @@ import { fetchBooks } from "./booksThunks";
 
 type StoreType = {
   data: BooksType[];
-  total: number;
+  total: string;
   loading: boolean;
   error?: string;
 };
 
 const initialState: StoreType = {
   data: [],
-  total: 0,
+  total: "0",
   loading: false,
 };
 
