@@ -14,8 +14,6 @@ const BookPage: React.FC = () => {
   const [error, setError] = useState(false);
   const { isbn13 } = useParams();
 
-  //const x = useLocation();
-
   useEffect(() => {
     fetchData();
   }, []);
