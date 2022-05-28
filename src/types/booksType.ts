@@ -1,7 +1,7 @@
 type BooksType = {
   title: string;
   subtitle: string;
-  isbn13: string;
+  isbn13: string | undefined;
   price: string;
   image?: string;
   url: string;
