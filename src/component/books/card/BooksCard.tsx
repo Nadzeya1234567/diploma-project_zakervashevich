@@ -6,6 +6,7 @@ import "./BooksCard.scss";
 import { IconButton } from "@mui/material";
 import { ReactComponent as LikeIcon } from "../../../assets/like.svg";
 import { ReactComponent as DislikeIcon } from "../../../assets/dislike.svg";
+import { ReactComponent as BookmarkIcon } from "../../../assets/bookmark.svg";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 import { BooksGrade } from "../../../enums/booksGrade";
@@ -15,11 +16,14 @@ type PropsType = {
 };
 
 const BooksCard: React.FC<PropsType> = ({ data }) => {
-  const { likePost, dislikePost } = useActions();
+  const { likePost, dislikePost, bookmarkPost } = useActions();
 
   const grades = useSelector((state) => state.books.grades);
   const isLiked = grades[data.isbn13] === BooksGrade.like;
   const isDisliked = grades[data.isbn13] === BooksGrade.dislike;
+
+  const bookmarks = useSelector((state) => state.books.bookmarks);
+  const isBookmarked = bookmarks.includes(data.isbn13);
 
   const handleClickLike = () => {
     likePost(data.isbn13);
@@ -27,6 +31,10 @@ const BooksCard: React.FC<PropsType> = ({ data }) => {
   const handleClickDislike = () => {
     dislikePost(data.isbn13);
   };
+  const handleClickBookmark = () => {
+    bookmarkPost(data.isbn13);
+  };
+
   return (
     <div className="book-card-container">
       <Image src={data.image} />
@@ -43,6 +51,9 @@ const BooksCard: React.FC<PropsType> = ({ data }) => {
         </IconButton>
         <IconButton onClick={handleClickDislike}>
           <DislikeIcon className={`icon ${isDisliked ? "_disliked" : ""}`} />
+        </IconButton>
+        <IconButton onClick={handleClickBookmark}>
+          <BookmarkIcon className={`icon ${isBookmarked ? "_bookmarked" : ""}`} />
         </IconButton>
       </div>
     </div>
