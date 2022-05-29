@@ -10,7 +10,7 @@ type FetchBookType = {
   data?: BooksType;
 };
 
-export const fetchBook = createAsyncThunk<FetchBookType, string, { rejectValue: string }>(
+export const fetchBook = createAsyncThunk<FetchBookType, string | undefined, { rejectValue: string }>(
   "book/fetchBook",
   async (id, thunkApi) => {
     const url = `${URL}/books/${id}`;
