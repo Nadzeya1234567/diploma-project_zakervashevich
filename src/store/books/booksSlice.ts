@@ -33,7 +33,7 @@ const booksSlice = createSlice({
   name: "books",
   initialState,
   reducers: {
-    likePost: (state, { payload: postId }: PayloadAction<string>) => {
+    likeBook: (state, { payload: postId }: PayloadAction<string>) => {
       if (state.grades[postId] === BooksGrade.like) {
         delete state.grades[postId];
       } else {
@@ -42,7 +42,7 @@ const booksSlice = createSlice({
 
       Storage.set("grades", state.grades);
     },
-    dislikePost: (state, { payload: postId }: PayloadAction<string>) => {
+    dislikeBook: (state, { payload: postId }: PayloadAction<string>) => {
       if (state.grades[postId] === BooksGrade.dislike) {
         delete state.grades[postId];
       } else {
@@ -50,7 +50,7 @@ const booksSlice = createSlice({
       }
       Storage.set("grades", state.grades);
     },
-    bookmarkPost: (state, { payload: postId }: PayloadAction<string>) => {
+    bookmarkBook: (state, { payload: postId }: PayloadAction<string>) => {
       if (state.bookmarks.includes(postId)) {
         state.bookmarks = state.bookmarks.filter((id) => id !== postId);
       } else {
