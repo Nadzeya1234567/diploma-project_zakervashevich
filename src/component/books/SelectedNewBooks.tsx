@@ -4,6 +4,7 @@ import { useSelector } from "../hooks/useSelector";
 import BooksCard from "./card/BooksCard";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { BooksGrade } from "../../enums/booksGrade";
+import NewBooksCard from "./card/NewBooksCard";
 
 enum Mode {
   LIKED,
@@ -51,7 +52,7 @@ const SelectedNewBooks: React.FC = () => {
       </ToggleButtonGroup>
       <div className="books-container">
         {filteredData.map((item) => (
-          <BooksCard key={item.isbn13} data={item} />
+          <NewBooksCard key={item.isbn13} data={item} />
         ))}
       </div>
       {loading && "Loading..."}

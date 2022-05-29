@@ -21,8 +21,8 @@ const initialState: StoreType = {
   data: [],
   total: "0",
   loading: false,
-  grades: Storage.get("grades", {}),
-  bookmarks: Storage.get("bookmarks", []),
+  grades: Storage.get("newgrades", {}),
+  bookmarks: Storage.get("newbookmarks", []),
 };
 
 const newBooksSlice = createSlice({
@@ -36,7 +36,7 @@ const newBooksSlice = createSlice({
         state.grades[postId] = BooksGrade.like;
       }
 
-      Storage.set("grades", state.grades);
+      Storage.set("newgrades", state.grades);
     },
     dislikeNewBook: (state, { payload: postId }: PayloadAction<string>) => {
       if (state.grades[postId] === BooksGrade.dislike) {
@@ -44,7 +44,7 @@ const newBooksSlice = createSlice({
       } else {
         state.grades[postId] = BooksGrade.dislike;
       }
-      Storage.set("grades", state.grades);
+      Storage.set("newgrades", state.grades);
     },
     bookmarkNewBook: (state, { payload: postId }: PayloadAction<string>) => {
       if (state.bookmarks.includes(postId)) {
@@ -52,7 +52,7 @@ const newBooksSlice = createSlice({
       } else {
         state.bookmarks.push(postId);
       }
-      Storage.set("bookmarks", state.bookmarks);
+      Storage.set("newbookmarks", state.bookmarks);
     },
   },
   extraReducers: (builder) => {
