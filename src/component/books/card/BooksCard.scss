@@ -50,19 +50,37 @@
     color: #424242;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 110px;
+    height: 80px;
     text-align: center;
   }
-  .text {
-    font-size: 18px;
-    margin-bottom: 24px;
-    color: #424242;
-    overflow: hidden;
-    flex-grow: 1;
-  }
+
   .price {
     font-size: 18px;
     color: #0091ea;
     text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .likes-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .icon {
+      width: 26px;
+      height: 26px;
+
+      &._liked {
+        path {
+          fill: #33aa33;
+        }
+      }
+
+      &._disliked {
+        path {
+          fill: #aa3333;
+        }
+      }
+    }
   }
 }

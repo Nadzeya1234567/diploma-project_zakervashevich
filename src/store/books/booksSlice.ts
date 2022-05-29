@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import BooksType from "../../types/booksType";
 import { fetchBooks } from "./booksThunks";
 
@@ -7,18 +7,39 @@ type StoreType = {
   total: string;
   loading: boolean;
   error?: string;
+  likes: string[];
+  dislikes: string[];
 };
 
 const initialState: StoreType = {
   data: [],
   total: "0",
   loading: false,
+  likes: [],
+  dislikes: [],
 };
 
 const booksSlice = createSlice({
   name: "books",
   initialState,
-  reducers: {},
+  reducers: {
+    likePost: (state, { payload }: PayloadAction<string>) => {
+      if (!state.likes.includes(payload)) {
+        state.likes.push(payload);
+        state.dislikes = state.dislikes.filter((id) => id !== payload);
+      } else {
+        state.likes = state.likes.filter((id) => id !== payload);
+      }
+    },
+    dislikePost: (state, { payload }: PayloadAction<string>) => {
+      if (!state.dislikes.includes(payload)) {
+        state.dislikes.push(payload);
+        state.likes = state.likes.filter((id) => id !== payload);
+      } else {
+        state.dislikes = state.dislikes.filter((id) => id !== payload);
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.loading = true;
