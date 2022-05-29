@@ -8,6 +8,7 @@ import { ReactComponent as LikeIcon } from "../../../assets/like.svg";
 import { ReactComponent as DislikeIcon } from "../../../assets/dislike.svg";
 import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
+import { BooksGrade } from "../../../enums/booksGrade";
 
 type PropsType = {
   data: BooksType;
@@ -16,10 +17,9 @@ type PropsType = {
 const BooksCard: React.FC<PropsType> = ({ data }) => {
   const { likePost, dislikePost } = useActions();
 
-  const likes = useSelector((state) => state.books.likes);
-  const isLiked = likes.includes(data.isbn13);
-  const dislikes = useSelector((state) => state.books.dislikes);
-  const isDisliked = dislikes.includes(data.isbn13);
+  const grades = useSelector((state) => state.books.grades);
+  const isLiked = grades[data.isbn13] === BooksGrade.like;
+  const isDisliked = grades[data.isbn13] === BooksGrade.dislike;
 
   const handleClickLike = () => {
     likePost(data.isbn13);
