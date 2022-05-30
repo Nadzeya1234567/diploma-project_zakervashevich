@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
-import Header from "./component/header/Header";
-
-import "./App.css";
-
 import Books from "./component/books/Books";
 import BookPage from "./component/bookPage/BookPage";
 import NewBooks from "./component/books/NewBooks";
 import SelectedNewBooks from "./component/books/SelectedNewBooks";
+import Header from "./component/header/Header";
+
+import "./App.css";
+import Login from "./component/login/Login";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +18,7 @@ const App: React.FC = () => {
 
           <div className="app-content">
             <Routes>
+              <Route path="/login" element={<Login />} />
               <Route path="/newbooks">
                 <Route index element={<NewBooks />} />
                 <Route path=":isbn13" element={<BookPage />} />
@@ -31,6 +31,7 @@ const App: React.FC = () => {
                 <Route index element={<SelectedNewBooks />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
+
               {/*  переадресация */}
               <Route path="*" element={<Navigate to={"/books"} />} />
               <Route path="*" element={<Books />} />
