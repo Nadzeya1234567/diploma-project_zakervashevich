@@ -16,24 +16,24 @@ type PropsType = {
   data: BooksType;
 };
 
-const BooksCard: React.FC<PropsType> = ({ data }) => {
-  const { likeBook, dislikeBook, bookmarkBook } = useActions();
+const NewBooksCard: React.FC<PropsType> = ({ data }) => {
+  const { likeNewBook, dislikeNewBook, bookmarkNewBook } = useActions();
 
-  const grades = useSelector((state) => state.books.grades);
+  const grades = useSelector((state) => state.newBooks.grades);
   const isLiked = grades[data.isbn13] === BooksGrade.like;
   const isDisliked = grades[data.isbn13] === BooksGrade.dislike;
 
-  const bookmarks = useSelector((state) => state.books.bookmarks);
+  const bookmarks = useSelector((state) => state.newBooks.bookmarks);
   const isBookmarked = bookmarks.includes(data.isbn13);
 
   const handleClickLike = () => {
-    likeBook(data.isbn13);
+    likeNewBook(data.isbn13);
   };
   const handleClickDislike = () => {
-    dislikeBook(data.isbn13);
+    dislikeNewBook(data.isbn13);
   };
   const handleClickBookmark = () => {
-    bookmarkBook(data.isbn13);
+    bookmarkNewBook(data.isbn13);
   };
 
   return (
@@ -61,4 +61,4 @@ const BooksCard: React.FC<PropsType> = ({ data }) => {
   );
 };
 
-export default BooksCard;
+export default NewBooksCard;

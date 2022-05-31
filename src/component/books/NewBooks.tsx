@@ -6,6 +6,7 @@ import { useActions } from "../hooks/useActions";
 
 import "./Books.scss";
 import BooksCard from "./card/BooksCard";
+import NewBooksCard from "./card/NewBooksCard";
 
 type PropsType = {};
 
@@ -33,7 +34,7 @@ const NewBooks: React.FC<PropsType> = () => {
 
       <div className="books-container">
         {data
-          .map((item) => <BooksCard key={item.isbn13} data={item} />)
+          .map((item) => <NewBooksCard key={item.isbn13} data={item} />)
           .slice(filter.limit * (filter.page - 1), filter.limit * filter.page)}
 
         {loading && "Loading..."}

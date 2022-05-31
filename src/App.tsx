@@ -8,6 +8,7 @@ import "./App.css";
 import Books from "./component/books/Books";
 import BookPage from "./component/bookPage/BookPage";
 import NewBooks from "./component/books/NewBooks";
+import SelectedNewBooks from "./component/books/SelectedNewBooks";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,10 @@ const App: React.FC = () => {
               </Route>
               <Route path="/books">
                 <Route index element={<Books />} />
+                <Route path=":isbn13" element={<BookPage />} />
+              </Route>
+              <Route path="/selectednewbooks">
+                <Route index element={<SelectedNewBooks />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
               {/*  переадресация */}
