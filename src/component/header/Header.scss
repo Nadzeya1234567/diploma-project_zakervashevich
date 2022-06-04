@@ -57,3 +57,34 @@
     }
   }
 }
+
+.controls {
+  display: flex;
+}
+
+.logout-button {
+  margin-right: 24px;
+}
+
+.header-username {
+  color: white;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+
+  path {
+    fill: white;
+  }
+
+  &:hover {
+    path {
+      fill: var(--primary-color2);
+    }
+  }
+}

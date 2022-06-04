@@ -8,8 +8,10 @@ import Header from "./component/header/Header";
 
 import "./App.css";
 import Login from "./component/login/Login";
+import { useSelector } from "./component/hooks/useSelector";
 
 const App: React.FC = () => {
+  const logged = useSelector((state) => state.auth.logged);
   return (
     <BrowserRouter>
       <div className="App">
@@ -18,7 +20,12 @@ const App: React.FC = () => {
 
           <div className="app-content">
             <Routes>
-              <Route path="/login" element={<Login />} />
+              {!logged && (
+                <>
+                  <Route path="/login/*" element={<Login />} />
+                </>
+              )}
+
               <Route path="/newbooks">
                 <Route index element={<NewBooks />} />
                 <Route path=":isbn13" element={<BookPage />} />
