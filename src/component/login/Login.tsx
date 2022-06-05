@@ -53,7 +53,7 @@ const Login: React.FC = () => {
           values={values}
           setValues={setValues}
         />
-        {error && <div className="form-error">No active account found with the given credentials</div>}
+        {error && <div className="form-error">{error}</div>}
 
         <Button onClick={handleSubmit}>{translate("login.submit")}</Button>
       </FormCard>

@@ -34,11 +34,15 @@ const App: React.FC = () => {
                 <Route index element={<Books />} />
                 <Route path=":isbn13" element={<BookPage />} />
               </Route>
-              <Route path="/selectednewbooks">
-                <Route index element={<SelectedNewBooks />} />
-                <Route path=":isbn13" element={<BookPage />} />
-              </Route>
 
+              {logged && (
+                <>
+                  <Route path="/selectednewbooks">
+                    <Route index element={<SelectedNewBooks />} />
+                    <Route path=":isbn13" element={<BookPage />} />
+                  </Route>
+                </>
+              )}
               {/*  переадресация */}
               <Route path="*" element={<Navigate to={"/books"} />} />
               <Route path="*" element={<Books />} />

@@ -11,25 +11,18 @@ import Username from "./username/Username";
 import { useSelector } from "../hooks/useSelector";
 import { useActions } from "../hooks/useActions";
 
-/* const LINKS = [
-  { url: "/login", text: "Login" },
-  { url: "/newbooks", text: "New Books" },
-  { url: "/books", text: "Search Books" },
-  { url: "/selectednewbooks", text: "Selected New Books" },
-]; */
-
 const Header: React.FC = () => {
   const { translate } = useTranslate();
   const { lang, setLang } = useTranslate();
   const logged = useSelector((state) => state.auth.logged);
   const { logout } = useActions();
 
-  const LINKS = [
-    { url: "/login", text: `${translate("login")}` },
+  const getLinks = (logged: boolean) => [
     { url: "/newbooks", text: `${translate("new books")}` },
     { url: "/books", text: `${translate("search books")}` },
-    { url: "/selectednewbooks", text: `${translate("selected books")}` },
+    ...(!logged ? [] : [{ url: "/selectednewbooks", text: `${translate("selected books")}` }]),
   ];
+  const LINKS = getLinks(logged);
 
   const handleLogout = () => {
     logout();

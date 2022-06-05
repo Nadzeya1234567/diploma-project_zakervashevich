@@ -3,14 +3,17 @@ import { useActions } from "../../hooks/useActions";
 import { useSelector } from "../../hooks/useSelector";
 
 const Username: React.FC = () => {
-  const { fetchProfile } = useActions();
-  const access = useSelector((state) => state.auth.access);
-  const username = useSelector((state) => state.auth.profile.username);
+  /* const { fetchProfile } = useActions(); */
+  const logged = useSelector((state) => state.auth.logged);
+  /*  const username = useSelector((state) => state.auth.profile.username); */
 
-  useEffect(() => {
-    fetchProfile();
-  }, [access]);
-  return <div className="header-username"> {username}</div>;
+  /*  useEffect(() => {
+    if (logged) {
+      fetchProfile();
+    }
+  }, [logged]); */
+
+  return <div className="header-username"> username</div>;
 };
 
 export default Username;
