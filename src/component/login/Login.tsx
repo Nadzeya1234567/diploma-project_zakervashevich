@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormValuesType from "../../types/FormValuesType";
 import { useActions } from "../hooks/useActions";
 import { useSelector } from "../hooks/useSelector";
@@ -14,6 +14,9 @@ const Login: React.FC = () => {
   const { translate } = useTranslate();
   const { createTokens, setAuthError } = useActions();
   const loading = useSelector((state) => state.auth.loading);
+  const login = useSelector((state) => state.auth.login);
+  const logged = useSelector((state) => state.auth.logged);
+  const password = useSelector((state) => state.auth.password);
   const serverError = useSelector((state) => state.auth.error);
   const error: string = validationError || (serverError ? "No active account found with the given credentials" : "");
 
@@ -27,6 +30,14 @@ const Login: React.FC = () => {
       createTokens(values);
     }
   };
+
+  useEffect(() => {
+    if (login === "book@mail.ru" && password === "1234567") {
+      localStorage.setItem("logged", logged.toString());
+    } else {
+      return;
+    }
+  });
 
   const setValues = (callback: (prevValue: FormValuesType) => FormValuesType) => {
     _setValues(callback);

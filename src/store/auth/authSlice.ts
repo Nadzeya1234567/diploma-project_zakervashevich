@@ -45,9 +45,14 @@ const authSlice = createSlice({
       Storage.set("refresh", payload);
     },
     setLogged: (state, { payload }: PayloadAction<string>) => {
-      state.login = payload;
-      state.password = payload;
-      Storage.set("logged", payload);
+      if (state.login === "book@mail.ru" && state.password === "1234567") {
+        state.logged = true;
+        state.login = payload;
+        state.password = payload;
+        Storage.set("logged", payload);
+      } else {
+        state.logged = false;
+      }
     },
     logout: (state) => {
       state.access = undefined;

@@ -25,7 +25,7 @@ const CreateTokensWorker = function* ({ payload }: PayloadAction<FormValuesType>
         access: "asdfghjkl",
         refresh: "qwertyuio",
       };
-
+      yield put(authActions.setLogged(payload.logged));
       yield put(authActions.setAccess(data.access));
       yield put(authActions.setRefresh(data.refresh));
     } else {
