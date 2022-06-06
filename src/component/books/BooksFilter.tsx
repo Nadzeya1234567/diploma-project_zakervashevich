@@ -39,7 +39,7 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
       <Pagination
         page={filter.page}
         onChange={handleChangePage}
-        count={Math.ceil(Number(total) / filter.limit)}
+        count={Math.ceil(Number(total) / filter.limit) && Math.max(100)}
         variant="outlined"
         shape="rounded"
         color="primary"
