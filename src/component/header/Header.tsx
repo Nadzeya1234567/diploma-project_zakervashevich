@@ -29,41 +29,45 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="header-container">
-      <div className="logo">
-        {/* <LogoIcon /> */}
-        <div className="app-name">{translate("bookstore")}</div>
+    <div className="header-container">
+      <div className="header-wrap">
+        <div className="logo">
+          {/* <LogoIcon /> */}
+          <div className="app-name">{translate("bookstore")}</div>
+        </div>
+
+        <nav className="header-navigation">
+          <ul className="links">
+            {LINKS.map(({ url, text }) => (
+              <li key={url + text}>
+                <NavLink to={url} className={({ isActive }) => (isActive ? "_active" : "")}>
+                  {text}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="controls">
+          {logged ? (
+            <>
+              <Username />
+              <LogoutIcon className="icon-button logout-button" onClick={handleLogout} />
+            </>
+          ) : (
+            <Link to="/login">
+              <LoginIcon className="icon-button logout-button" onClick={handleLogout} />
+            </Link>
+          )}
+
+          {lang === "en" ? (
+            <button onClick={() => setLang("ru")}>ru</button>
+          ) : (
+            <button onClick={() => setLang("en")}>en</button>
+          )}
+        </div>
       </div>
-
-      <ul className="links">
-        {LINKS.map(({ url, text }) => (
-          <li key={url + text}>
-            <NavLink to={url} className={({ isActive }) => (isActive ? "_active" : "")}>
-              {text}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
-      <div className="controls">
-        {logged ? (
-          <>
-            <Username />
-            <LogoutIcon className="icon-button logout-button" onClick={handleLogout} />
-          </>
-        ) : (
-          <Link to="/login">
-            <LoginIcon className="icon-button logout-button" onClick={handleLogout} />
-          </Link>
-        )}
-
-        {lang === "en" ? (
-          <button onClick={() => setLang("ru")}>ru</button>
-        ) : (
-          <button onClick={() => setLang("en")}>en</button>
-        )}
-      </div>
-    </nav>
+    </div>
   );
 };
 
