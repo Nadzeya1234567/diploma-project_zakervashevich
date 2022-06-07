@@ -35,7 +35,14 @@ const NewBooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
         <MenuItem value={20}>Twenty</MenuItem>
       </Select>
 
-      <Pagination page={filter.page} onChange={handleChangePage} count={Math.ceil(Number(total) / filter.limit)} />
+      <Pagination
+        page={filter.page}
+        onChange={handleChangePage}
+        count={Math.ceil(Number(total) / filter.limit)}
+        variant="outlined"
+        shape="rounded"
+        color="primary"
+      />
     </div>
   );
 };

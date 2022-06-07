@@ -1,8 +1,9 @@
 * {
-  --background-color: #f5f8ff;
-  --card-color: #ffffff;
-  --primary-color0: #0172fe;
-  --primary-color1: #0096ff;
+  --background-color: #ded7e6;
+  /*  --card-color: #ded7e6; */
+  --card-color: #f3eff8;
+  --primary-color0: #8870ff;
+  --primary-color1: #897fba;
   --primary-color2: #50b7ff;
   --header-color: #111111;
   --text-color: #424242;

@@ -4,21 +4,14 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  align-items: center;
-  justify-content: center;
 }
 .app-container {
   max-width: 1170px;
-
   margin: auto;
-  padding: 30px 15px;
+  padding: 0 15px;
 }
 .app-content {
-  margin-top: 60px;
+  margin-top: 100px;
 }

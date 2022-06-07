@@ -1,0 +1,12 @@
+{
+  "login.name": "Имя",
+  "login.email": "Почта",
+  "login.password": "Пароль",
+  "login.confirmPassword": "Подтвердите пароль",
+  "login.submit": "Войти",
+  "bookstore": "Книжный магазин",
+  "login": "Логин",
+  "new books": "Новые книги",
+  "search books": "Поиск книг",
+  "selected books": "Избранное"
+}
