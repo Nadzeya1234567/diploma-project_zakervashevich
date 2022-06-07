@@ -41,7 +41,7 @@ const NewBooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
         count={Math.ceil(Number(total) / filter.limit)}
         variant="outlined"
         shape="rounded"
-        color="primary"
+        color="secondary"
       />
     </div>
   );

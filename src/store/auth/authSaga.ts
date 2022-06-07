@@ -1,8 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { all, call, put, spawn, takeEvery, takeLeading } from "redux-saga/effects";
-import sagaApi from "../../helpers/sagaApi";
 import FormValuesType from "../../types/FormValuesType";
-import ProfileType from "../../types/ProfileType";
 import { authActions } from "./authSlice";
 
 type CreateTokensType = {
