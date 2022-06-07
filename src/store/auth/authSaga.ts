@@ -17,10 +17,13 @@ const CreateTokensWatcher = function* () {
 };
 
 const CreateTokensWorker = function* ({ payload }: PayloadAction<FormValuesType>) {
+  console.log(payload);
   yield put(authActions.setAuthLoading(true));
   yield put(authActions.setAuthError(false));
   try {
-    if (payload.login === "book@mail.ru" && payload.password === "1234567") {
+    console.log(payload);
+    if (payload.email === "book@mail.ru" && payload.password === "1234567") {
+      console.log(payload);
       const data = {
         access: "asdfghjkl",
         refresh: "qwertyuio",
