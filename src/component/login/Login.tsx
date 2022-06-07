@@ -14,7 +14,7 @@ const Login: React.FC = () => {
   const { translate } = useTranslate();
   const { createTokens, setAuthError } = useActions();
   const loading = useSelector((state) => state.auth.loading);
-  const login = useSelector((state) => state.auth.login);
+  const email = useSelector((state) => state.auth.email);
   const logged = useSelector((state) => state.auth.logged);
   const password = useSelector((state) => state.auth.password);
   const serverError = useSelector((state) => state.auth.error);
@@ -32,7 +32,7 @@ const Login: React.FC = () => {
   };
 
   useEffect(() => {
-    if (login === "book@mail.ru" && password === "1234567") {
+    if (email === "book@mail.ru" && password === "1234567") {
       localStorage.setItem("logged", logged.toString());
     } else {
       return;

@@ -8,7 +8,7 @@ type StoreType = {
   loading: boolean;
   error: boolean;
   logged: boolean;
-  login: string;
+  email: string;
   password: string;
 };
 
@@ -18,7 +18,7 @@ const initialState: StoreType = {
   error: false,
   access: Storage.get("access", undefined),
   refresh: Storage.get("refresh", undefined),
-  login: "",
+  email: "",
   password: "",
 };
 
@@ -45,9 +45,9 @@ const authSlice = createSlice({
       Storage.set("refresh", payload);
     },
     setLogged: (state, { payload }: PayloadAction<string>) => {
-      if (state.login === "book@mail.ru" && state.password === "1234567") {
+      if (state.email === "book@mail.ru" && state.password === "1234567") {
         state.logged = true;
-        state.login = payload;
+        state.email = payload;
         state.password = payload;
         Storage.set("logged", payload);
       } else {
