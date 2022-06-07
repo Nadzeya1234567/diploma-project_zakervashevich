@@ -1,43 +1,62 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { BooksGrade } from "../../enums/booksGrade";
 import BooksType from "../../types/booksType";
 import { fetchBooks } from "./booksThunks";
+import Storage from "../../helpers/Storage";
+
+type GradesType = {
+  [prop: string]: BooksGrade;
+};
+//grades = {
+// [1]: +1; //пост лайкнут
+// [2]: -1; //пост дизлайкнут
+//}
 
 type StoreType = {
   data: BooksType[];
   total: string;
   loading: boolean;
   error?: string;
-  likes: string[];
-  dislikes: string[];
+  grades: GradesType;
+  bookmarks: string[];
 };
 
 const initialState: StoreType = {
   data: [],
   total: "0",
   loading: false,
-  likes: [],
-  dislikes: [],
+  grades: Storage.get("grades", {}),
+  bookmarks: Storage.get("bookmarks", []),
 };
 
 const booksSlice = createSlice({
   name: "books",
   initialState,
   reducers: {
-    likePost: (state, { payload }: PayloadAction<string>) => {
-      if (!state.likes.includes(payload)) {
-        state.likes.push(payload);
-        state.dislikes = state.dislikes.filter((id) => id !== payload);
+    likeBook: (state, { payload: postId }: PayloadAction<string>) => {
+      if (state.grades[postId] === BooksGrade.like) {
+        delete state.grades[postId];
       } else {
-        state.likes = state.likes.filter((id) => id !== payload);
+        state.grades[postId] = BooksGrade.like;
       }
+
+      Storage.set("grades", state.grades);
     },
-    dislikePost: (state, { payload }: PayloadAction<string>) => {
-      if (!state.dislikes.includes(payload)) {
-        state.dislikes.push(payload);
-        state.likes = state.likes.filter((id) => id !== payload);
+    dislikeBook: (state, { payload: postId }: PayloadAction<string>) => {
+      if (state.grades[postId] === BooksGrade.dislike) {
+        delete state.grades[postId];
       } else {
-        state.dislikes = state.dislikes.filter((id) => id !== payload);
+        state.grades[postId] = BooksGrade.dislike;
       }
+      Storage.set("grades", state.grades);
+    },
+    bookmarkBook: (state, { payload: postId }: PayloadAction<string>) => {
+      if (state.bookmarks.includes(postId)) {
+        state.bookmarks = state.bookmarks.filter((id) => id !== postId);
+      } else {
+        state.bookmarks.push(postId);
+      }
+      Storage.set("bookmarks", state.bookmarks);
     },
   },
   extraReducers: (builder) => {

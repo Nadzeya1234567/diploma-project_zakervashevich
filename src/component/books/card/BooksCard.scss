@@ -1,6 +1,6 @@
 .book-card-container {
   padding: 24px;
-  background-color: #f5f5f5;
+  background-color: var(--card-color);
   border-radius: 8px;
   width: 200px;
   height: 400px;
@@ -67,8 +67,8 @@
     align-items: center;
 
     .icon {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
 
       &._liked {
         path {
@@ -79,6 +79,12 @@
       &._disliked {
         path {
           fill: #aa3333;
+        }
+      }
+
+      &._bookmarked {
+        path {
+          fill: #faaa33;
         }
       }
     }

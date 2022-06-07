@@ -1,0 +1,12 @@
+{
+  "login.name": "Name",
+  "login.email": "Email",
+  "login.password": "Password",
+  "login.confirmPassword": "Confirm Password",
+  "login.submit": "Login",
+  "bookstore": "Bookstore",
+  "login": "Login",
+  "new books": "New books",
+  "search books": "Search books",
+  "selected books": "Selected books"
+}
