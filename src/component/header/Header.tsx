@@ -33,7 +33,7 @@ const Header: React.FC = () => {
     <div className="header-container">
       <div className="header-wrap">
         <div className="logo">
-          {/* <LogoIcon /> */}
+          {<LogoIcon className="logo-icon" />}
           <div className="app-name">{translate("bookstore")}</div>
         </div>
 

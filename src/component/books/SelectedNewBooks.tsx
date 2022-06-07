@@ -46,13 +46,13 @@ const SelectedNewBooks: React.FC = () => {
     <div className="books-wrap">
       <div className="selected-books-filter">
         <ToggleButtonGroup color="secondary" value={mode} exclusive onChange={handleToggleMode}>
-          <ToggleButton color="secondary" value={Mode.LIKED}>
+          <ToggleButton className="select__item" color="secondary" value={Mode.LIKED}>
             Liked
           </ToggleButton>
-          <ToggleButton color="secondary" value={Mode.DISLIKED}>
+          <ToggleButton className="select__item" color="secondary" value={Mode.DISLIKED}>
             Disliked
           </ToggleButton>
-          <ToggleButton color="secondary" value={Mode.BOOKMARKED}>
+          <ToggleButton className="select__item" color="secondary" value={Mode.BOOKMARKED}>
             Bookmarked
           </ToggleButton>
         </ToggleButtonGroup>
