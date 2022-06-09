@@ -13,6 +13,8 @@
 
   .select {
     margin-right: 20px;
+    height: 34px;
+    color: var(--text-color);
   }
 
   .select-search {
@@ -22,4 +24,14 @@
 
 .books-wrap {
   margin-top: 40px;
+}
+
+.selected-books-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .select__item {
+    color: var(--text-color);
+  }
 }

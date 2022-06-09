@@ -20,24 +20,25 @@
   .logo {
     display: flex;
     align-items: center;
+    width: 300px;
 
-    svg {
-      width: 54px;
-      height: 54px;
+    .logo-icon {
+      width: 30px;
+      height: 30px;
       margin-right: 24px;
 
       path {
-        fill: #ffffff;
+        fill: var(--text-header);
       }
     }
 
     .app-name {
-      color: #ffffff;
+      color: var(--text-header);
       font-size: 24px;
     }
   }
   .header-navigation {
-    width: 300px;
+    width: 500px;
   }
 
   .links {
@@ -52,7 +53,7 @@
     }
 
     a {
-      color: #ffffff;
+      color: var(--text-header);
 
       &:hover {
         color: var(--primary-color2);
@@ -67,17 +68,12 @@
 
 .controls {
   display: flex;
-}
-
-.logout-button {
-  margin-right: 24px;
+  justify-content: space-around;
+  width: 200px;
 }
 
 .header-username {
-  color: white;
-  margin-right: 18px;
-  display: flex;
-  align-items: center;
+  color: var(--text-header);
 }
 
 .icon-button {
@@ -86,7 +82,7 @@
   height: 24px;
 
   path {
-    fill: white;
+    fill: var(--text-header);
   }
 
   &:hover {

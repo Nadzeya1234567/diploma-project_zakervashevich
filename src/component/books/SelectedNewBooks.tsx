@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useActions } from "../hooks/useActions";
 import { useSelector } from "../hooks/useSelector";
-import BooksCard from "./card/BooksCard";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { BooksGrade } from "../../enums/booksGrade";
 import NewBooksCard from "./card/NewBooksCard";
@@ -45,11 +44,20 @@ const SelectedNewBooks: React.FC = () => {
 
   return (
     <div className="books-wrap">
-      <ToggleButtonGroup value={mode} exclusive onChange={handleToggleMode}>
-        <ToggleButton value={Mode.LIKED}>Liked</ToggleButton>
-        <ToggleButton value={Mode.DISLIKED}>Disliked</ToggleButton>
-        <ToggleButton value={Mode.BOOKMARKED}>Bookmarked</ToggleButton>
-      </ToggleButtonGroup>
+      <div className="selected-books-filter">
+        <ToggleButtonGroup color="secondary" value={mode} exclusive onChange={handleToggleMode}>
+          <ToggleButton className="select__item" color="secondary" value={Mode.LIKED}>
+            Liked
+          </ToggleButton>
+          <ToggleButton className="select__item" color="secondary" value={Mode.DISLIKED}>
+            Disliked
+          </ToggleButton>
+          <ToggleButton className="select__item" color="secondary" value={Mode.BOOKMARKED}>
+            Bookmarked
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </div>
+
       <div className="books-container">
         {filteredData.map((item) => (
           <NewBooksCard key={item.isbn13} data={item} />

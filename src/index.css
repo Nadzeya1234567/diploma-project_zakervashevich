@@ -7,6 +7,10 @@
 
   --header-color: #111111;
   --text-color: #424242;
+  --text-header: #f3eff8;
+  --book-liked: #33aa33;
+  --book-disliked: #aa3333;
+  --book-bookmarked: #faaa33;
 
   margin: 0;
   padding: 0;

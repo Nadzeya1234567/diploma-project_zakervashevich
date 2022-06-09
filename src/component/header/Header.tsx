@@ -10,6 +10,7 @@ import "./Header.scss";
 import Username from "./username/Username";
 import { useSelector } from "../hooks/useSelector";
 import { useActions } from "../hooks/useActions";
+import { Button } from "@mui/material";
 
 const Header: React.FC = () => {
   const { translate } = useTranslate();
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
     <div className="header-container">
       <div className="header-wrap">
         <div className="logo">
-          {/* <LogoIcon /> */}
+          {<LogoIcon className="logo-icon" />}
           <div className="app-name">{translate("bookstore")}</div>
         </div>
 
@@ -61,9 +62,13 @@ const Header: React.FC = () => {
           )}
 
           {lang === "en" ? (
-            <button onClick={() => setLang("ru")}>ru</button>
+            <Button variant="contained" color="secondary" size="small" onClick={() => setLang("ru")}>
+              ru
+            </Button>
           ) : (
-            <button onClick={() => setLang("en")}>en</button>
+            <Button variant="contained" color="secondary" size="small" onClick={() => setLang("en")}>
+              en
+            </Button>
           )}
         </div>
       </div>

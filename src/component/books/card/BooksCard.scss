@@ -12,7 +12,6 @@
   .image-wrap {
     width: 150px;
     height: 150px;
-    //margin-bottom: 24px;
     border-radius: 8px;
     border: 1px solid var(--primary-color0);
   }
@@ -47,7 +46,7 @@
   .title {
     font-size: 20px;
     margin-bottom: 16px;
-    color: #424242;
+    color: var(--text-color);
     text-overflow: ellipsis;
     overflow: hidden;
     height: 80px;
@@ -56,7 +55,7 @@
 
   .price {
     font-size: 18px;
-    color: #0091ea;
+    color: var(--primary-color0);
     text-align: center;
     margin-bottom: 16px;
   }
@@ -72,19 +71,19 @@
 
       &._liked {
         path {
-          fill: #33aa33;
+          fill: var(--book-liked);
         }
       }
 
       &._disliked {
         path {
-          fill: #aa3333;
+          fill: var(--book-disliked);
         }
       }
 
       &._bookmarked {
         path {
-          fill: #faaa33;
+          fill: var(--book-bookmarked);
         }
       }
     }
