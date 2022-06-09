@@ -5,13 +5,12 @@
   text-decoration: none;
   box-sizing: border-box;
   margin: auto;
-  height: 100vh;
+  background-color: var(--background-color);
 }
-.app-container {
+
+.app-content {
   max-width: 1170px;
   margin: auto;
   padding: 0 15px;
-}
-.app-content {
-  margin-top: 100px;
+  min-height: 100vh;
 }

@@ -1,16 +1,21 @@
 .form-card-container {
-  background-color: #fff;
+  background-color: var(--form-background-color);
   border-radius: 16px;
   padding: 24px;
-
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  width: 350px;
+  height: 300px;
 
   .header {
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 24px;
+    color: var(--text-color);
+    display: block;
+    margin: auto;
   }
 
   .text-field-container {

@@ -9,7 +9,7 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 
   .select {
     margin-right: 20px;
@@ -20,10 +20,6 @@
   .select-search {
     margin: 0 20px;
   }
-}
-
-.books-wrap {
-  margin-top: 40px;
 }
 
 .selected-books-filter {
