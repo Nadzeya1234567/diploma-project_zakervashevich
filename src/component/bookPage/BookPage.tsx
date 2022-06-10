@@ -34,20 +34,23 @@ const BookPage: React.FC = () => {
 
   return (
     <div className="bookpage-container">
-      <Image src={data?.image} />
-
-      <div className="title">{data?.title}</div>
-      <div className="subtitle">{data?.subtitle}</div>
-      <div className="book-details-wrap">
-        <div className="authors">Authors: {data?.authors}</div>
-        <div className="publisher">Publisher: {data?.publisher}</div>
-        <div className="description">{data?.desc}</div>
-        <div className="pages">Pages: {data?.pages} </div>
-        <div className="year">Year: {data?.year}</div>
-        <div className="rating">
-          <Rating name="read-only" value={Number(data?.rating)} readOnly />
+      <div className="bookpage__image">
+        <Image src={data?.image} />
+      </div>
+      <div>
+        <div className="title">{data?.title}</div>
+        <div className="subtitle">{data?.subtitle}</div>
+        <div className="book-details-wrap">
+          <div className="authors">Authors: {data?.authors}</div>
+          <div className="publisher">Publisher: {data?.publisher}</div>
+          <div className="description">{data?.desc}</div>
+          <div className="pages">Pages: {data?.pages} </div>
+          <div className="year">Year: {data?.year}</div>
+          <div className="rating">
+            <Rating name="read-only" value={Number(data?.rating)} readOnly />
+          </div>
+          <div className="price">Price: {data?.price}</div>
         </div>
-        <div className="price">Price: {data?.price}</div>
       </div>
     </div>
   );

@@ -11,6 +11,8 @@ type PropsType = {
   setFilter: (callback: (v: BooksFilterType) => BooksFilterType) => void;
 };
 
+const MAX_PAGE = 100;
+
 const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
   const setSearchBooks = (value: string) => {
     const search = value !== "" ? value : undefined;
@@ -27,6 +29,9 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
     }));
   };
 
+  const pageCount = Math.ceil(Number(total) / filter.limit);
+  const visiblePageCount = Math.min(pageCount, MAX_PAGE);
+
   return (
     <div className="filter-container">
       <TextField
@@ -39,7 +44,7 @@ const BooksFilter: React.FC<PropsType> = ({ total, filter, setFilter }) => {
       <Pagination
         page={filter.page}
         onChange={handleChangePage}
-        count={Math.ceil(Number(total) / filter.limit)}
+        count={visiblePageCount}
         variant="outlined"
         shape="rounded"
         color="secondary"

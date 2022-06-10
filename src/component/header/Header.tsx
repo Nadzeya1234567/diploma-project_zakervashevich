@@ -11,6 +11,7 @@ import Username from "./username/Username";
 import { useSelector } from "../hooks/useSelector";
 import { useActions } from "../hooks/useActions";
 import { Button } from "@mui/material";
+import Theme from "./theme/Theme";
 
 const Header: React.FC = () => {
   const { translate } = useTranslate();
@@ -70,6 +71,7 @@ const Header: React.FC = () => {
               en
             </Button>
           )}
+          <Theme />
         </div>
       </div>
     </div>

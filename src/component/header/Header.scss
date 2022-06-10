@@ -73,7 +73,8 @@
 .controls {
   display: flex;
   justify-content: space-around;
-  width: 200px;
+  align-items: center;
+  width: 250px;
 }
 
 .header-username {
@@ -89,6 +90,21 @@
     fill: var(--text-header);
   }
 
+  &:hover {
+    path {
+      fill: var(--primary-color2);
+    }
+  }
+}
+
+.header-theme {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  align-self: flex-start;
+  path {
+    fill: var(--text-header);
+  }
   &:hover {
     path {
       fill: var(--primary-color2);

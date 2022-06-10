@@ -1,13 +1,13 @@
 .bookpage-container {
-  //padding: 24px;
   background-color: #f5f5f5;
   border-radius: 8px;
-  width: 400px;
-  min-height: 400px;
-  margin: 0 15px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  padding: 10px;
+
+  .bookpage__image {
+    width: 300px;
+  }
 
   .image {
     width: 100%;
@@ -24,7 +24,6 @@
     font-size: 18px;
     margin-bottom: 24px;
     color: var(--text-color);
-    overflow: hidden;
     margin: auto;
     align-content: center;
   }
@@ -41,8 +40,8 @@
     .description {
       font-size: 16px;
       color: var(--text-color);
-      overflow: hidden;
-      flex-grow: 1;
+
+      /*  flex-grow: 1; */
     }
     .price {
       font-size: 16px;
