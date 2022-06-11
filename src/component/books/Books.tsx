@@ -32,9 +32,12 @@ const Books: React.FC<PropsType> = () => {
       <BooksFilter total={total} filter={filter} setFilter={setFilter} />
 
       <div className="books-container">
-        {data.map((item) => (
-          <BooksCard key={item.isbn13} data={item} />
-        ))}
+        {data.length > 0 ? (
+          data.map((item) => <BooksCard key={item.isbn13} data={item} />)
+        ) : (
+          <div>Nothing was found according to your request. Please, try again.</div>
+        )}
+
         {loading && "Loading..."}
         {error}
       </div>

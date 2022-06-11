@@ -13,7 +13,8 @@ body {
   --primary-color1: #897fba;
   --primary-color2: #b165d4;
 
-  --text-color: #424242;
+  --bookpage-background-color: #f3eff8;
+  --text-color: #2c2c2c;
   --text-header: #f3eff8;
   --book-liked: #33aa33;
   --book-disliked: #aa3333;
@@ -27,6 +28,7 @@ body[data-theme="dark"] {
   --primary-color1: #675d97;
   --primary-color2: #ad37e4;
 
+  --bookpage-background-color: #675d97;
   --input-background-color: #675d97;
   --form-background-color: #390053;
   --text-color: #f3eff8;

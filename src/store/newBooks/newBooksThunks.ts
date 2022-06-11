@@ -17,7 +17,7 @@ export const fetchNewBooks = createAsyncThunk<FetchBooksType, BooksFilterType, {
 
     try {
       const response = await axios.get(url);
-      console.log(response);
+
       return {
         data: response.data.books as BooksType[],
         total: response.data.total as string,
@@ -35,7 +35,7 @@ export const fetchSelectedNewBooks = createAsyncThunk<FetchBooksType, undefined,
 
     try {
       const response = await axios.get(url);
-      console.log(response);
+
       return {
         data: response.data.books as BooksType[],
         total: response.data.total as string,
