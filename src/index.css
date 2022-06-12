@@ -16,6 +16,7 @@ body {
   --bookpage-background-color: #f3eff8;
   --text-color: #2c2c2c;
   --text-header: #f3eff8;
+  --icon-theme: #f3eff8;
   --book-liked: #33aa33;
   --book-disliked: #aa3333;
   --book-bookmarked: #faaa33;
@@ -33,7 +34,8 @@ body[data-theme="dark"] {
   --form-background-color: #390053;
   --text-color: #f3eff8;
   --text-header: #f3eff8;
-  --book-liked: #1a771a;
+  --icon-theme: #ffbe00;
+  --book-liked: #00cc00;
   --book-disliked: #d12f2f;
   --book-bookmarked: #f19f22;
 }
