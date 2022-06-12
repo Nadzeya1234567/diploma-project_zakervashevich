@@ -5,6 +5,15 @@
   flex-wrap: wrap;
   gap: 24px;
   color: var(--text-color);
+
+  .cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: var(--text-color);
+  }
 }
 .filter-container {
   margin-bottom: 20px;
