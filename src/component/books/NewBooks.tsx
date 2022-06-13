@@ -3,10 +3,9 @@ import BooksFilterType from "../../types/BooksFilterType";
 import NewBooksFilter from "./NewBooksFilter";
 import { useSelector } from "../hooks/useSelector";
 import { useActions } from "../hooks/useActions";
+import NewBooksCard from "./card/NewBooksCard";
 
 import "./Books.scss";
-import BooksCard from "./card/BooksCard";
-import NewBooksCard from "./card/NewBooksCard";
 
 type PropsType = {};
 
@@ -33,9 +32,11 @@ const NewBooks: React.FC<PropsType> = () => {
       </div>
 
       <div className="books-container">
-        {data
-          .map((item) => <NewBooksCard key={item.isbn13} data={item} />)
-          .slice(filter.limit * (filter.page - 1), filter.limit * filter.page)}
+        <div data-testid="cards" className="cards">
+          {data
+            .map((item) => <NewBooksCard key={item.isbn13} data={item} />)
+            .slice(filter.limit * (filter.page - 1), filter.limit * filter.page)}
+        </div>
 
         {loading && "Loading..."}
         {error}

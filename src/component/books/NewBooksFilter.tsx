@@ -2,7 +2,6 @@ import React from "react";
 import Pagination from "@mui/material/Pagination";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import BooksFilterType from "../../types/BooksFilterType";
-import TextField from "../ui/textField/TextField";
 
 import "./Books.scss";
 

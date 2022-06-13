@@ -17,7 +17,7 @@ export const fetchBook = createAsyncThunk<FetchBookType, string | undefined, { r
 
     try {
       const response = await axios.get(url);
-      console.log(response);
+
       return {
         data: response.data as BooksType,
       };

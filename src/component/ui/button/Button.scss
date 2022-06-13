@@ -6,6 +6,10 @@
   height: 32px;
   color: #fff;
   cursor: pointer;
+  width: 150px;
+  display: block;
+  margin: auto;
+  text-align: center;
 
   &:hover {
     background-color: var(--primary-color2);

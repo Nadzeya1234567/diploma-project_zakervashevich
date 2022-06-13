@@ -17,7 +17,7 @@ export const fetchBooks = createAsyncThunk<FetchBooksType, BooksFilterType, { re
 
     try {
       const response = await axios.get(url);
-      console.log(response);
+
       return {
         data: response.data.books as BooksType[],
         total: response.data.total as string,

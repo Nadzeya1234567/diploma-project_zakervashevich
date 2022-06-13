@@ -34,11 +34,12 @@ const BookPage: React.FC = () => {
 
   return (
     <div className="bookpage-container">
-      <Image src={data?.image} />
-
-      <div className="title">{data?.title}</div>
-      <div className="subtitle">{data?.subtitle}</div>
-      <div className="book-details-wrap">
+      <div className="bookpage__image">
+        <Image src={data?.image} />
+      </div>
+      <div className="bookpage__description">
+        <div className="title">{data?.title}</div>
+        <div className="subtitle">{data?.subtitle}</div>
         <div className="authors">Authors: {data?.authors}</div>
         <div className="publisher">Publisher: {data?.publisher}</div>
         <div className="description">{data?.desc}</div>
