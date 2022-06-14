@@ -1,17 +1,17 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import useTranslate from "../hooks/useTranslate";
+import Username from "./username/Username";
+import Theme from "./theme/Theme";
+import { useSelector } from "../hooks/useSelector";
+import { useActions } from "../hooks/useActions";
+import { Button } from "@mui/material";
 
 import { ReactComponent as LogoIcon } from "../../assets/logo.svg";
 import { ReactComponent as LoginIcon } from "../../assets/login.svg";
 import { ReactComponent as LogoutIcon } from "../../assets/logout.svg";
 
 import "./Header.scss";
-import Username from "./username/Username";
-import { useSelector } from "../hooks/useSelector";
-import { useActions } from "../hooks/useActions";
-import { Button } from "@mui/material";
-import Theme from "./theme/Theme";
 
 const Header: React.FC = () => {
   const { translate } = useTranslate();

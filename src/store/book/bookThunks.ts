@@ -1,7 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import BooksFilterType from "../../types/BooksFilterType";
-
 import BooksType from "../../types/booksType";
 
 const URL = "https://api.itbook.store/1.0";

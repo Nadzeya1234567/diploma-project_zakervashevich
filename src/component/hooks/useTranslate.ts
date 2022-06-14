@@ -42,7 +42,7 @@ const useTranslate = () => {
   }, []);
 
   const setLang = (_lang: string) => {
-    console.log(`${lang} => ${_lang}`);
+    /*  console.log(`${lang} => ${_lang}`); */
     lang = _lang;
     localStorage.setItem("lang", lang);
     //говорим: смотри, язык изменился

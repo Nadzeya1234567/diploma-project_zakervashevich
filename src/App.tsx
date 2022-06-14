@@ -5,10 +5,10 @@ import BookPage from "./component/bookPage/BookPage";
 import NewBooks from "./component/books/NewBooks";
 import SelectedNewBooks from "./component/books/SelectedNewBooks";
 import Header from "./component/header/Header";
-
-import "./App.css";
 import Login from "./component/login/Login";
 import { useSelector } from "./component/hooks/useSelector";
+
+import "./App.css";
 
 const App: React.FC = () => {
   const logged = useSelector((state) => state.auth.logged);

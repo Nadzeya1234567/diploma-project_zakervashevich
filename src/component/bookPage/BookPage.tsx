@@ -7,8 +7,6 @@ import { useActions } from "../hooks/useActions";
 
 import "./BookPage.scss";
 
-const URL = "https://api.itbook.store/1.0";
-
 const BookPage: React.FC = () => {
   const { isbn13 } = useParams();
 
