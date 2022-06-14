@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { all, call, put, spawn, takeEvery, takeLeading } from "redux-saga/effects";
+import { all, put, spawn, takeLeading } from "redux-saga/effects";
 import FormValuesType from "../../types/FormValuesType";
 import { authActions } from "./authSlice";
 
@@ -15,13 +15,10 @@ const CreateTokensWatcher = function* () {
 };
 
 const CreateTokensWorker = function* ({ payload }: PayloadAction<FormValuesType>) {
-  console.log(payload);
   yield put(authActions.setAuthLoading(true));
   yield put(authActions.setAuthError(false));
   try {
-    console.log(payload);
     if (payload.email === "book@mail.ru" && payload.password === "1234567") {
-      console.log(payload);
       const data = {
         access: "asdfghjkl",
         refresh: "qwertyuio",
@@ -40,7 +37,7 @@ const CreateTokensWorker = function* ({ payload }: PayloadAction<FormValuesType>
 };
 
 const authSaga = function* () {
-  yield all([/* spawn(fetchProfileWatcher), */ spawn(CreateTokensWatcher)]);
+  yield all([spawn(CreateTokensWatcher)]);
 };
 
 export default authSaga;

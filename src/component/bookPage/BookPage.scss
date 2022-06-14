@@ -16,38 +16,39 @@
   .bookpage__description {
     padding: 15px;
     color: var(--text-color);
-  }
-  .title {
-    font-size: 24px;
-    margin-bottom: 24px;
-    color: var(--text-color);
-    margin: auto;
-    align-content: center;
-  }
-  .subtitle {
-    font-size: 18px;
-    margin-bottom: 24px;
-    color: var(--text-color);
-    margin: auto;
-    align-content: center;
-  }
 
-  .authors {
-    font-size: 18px;
-    color: var(--text-color);
-  }
-  .publisher {
-    font-size: 18px;
-    color: var(--text-color);
-  }
-  .description {
-    font-size: 16px;
-    color: var(--text-color);
+    .title {
+      font-size: 24px;
+      margin-bottom: 24px;
+      color: var(--text-color);
+      margin: auto;
+      align-content: center;
+    }
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 24px;
+      color: var(--text-color);
+      margin: auto;
+      align-content: center;
+    }
 
-    flex-grow: 1;
-  }
-  .price {
-    font-size: 16px;
-    color: var(--primary-color0);
+    .authors {
+      font-size: 18px;
+      color: var(--text-color);
+    }
+    .publisher {
+      font-size: 18px;
+      color: var(--text-color);
+    }
+    .description {
+      font-size: 16px;
+      color: var(--text-color);
+
+      flex-grow: 1;
+    }
+    .price {
+      font-size: 16px;
+      color: var(--primary-color0);
+    }
   }
 }

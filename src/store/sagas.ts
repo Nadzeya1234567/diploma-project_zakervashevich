@@ -1,4 +1,4 @@
-import { all, spawn, take } from "redux-saga/effects";
+import { all, spawn } from "redux-saga/effects";
 import authSaga from "./auth/authSaga";
 
 const sagas = function* () {

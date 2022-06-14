@@ -8,6 +8,8 @@ import FormCard from "../ui/formCard/FormCard";
 import FormTextField from "../ui/formTextField/FormTextField";
 import { getEmailError, getPasswordError } from "../../helpers/validation";
 
+import "./Login.scss";
+
 const Login: React.FC = () => {
   const [values, _setValues] = useState<FormValuesType>({});
   const [validationError, setValidationError] = useState("");
@@ -48,25 +50,29 @@ const Login: React.FC = () => {
   return (
     <div className="center_content">
       <FormCard header="Login" loading={loading}>
-        <FormTextField
-          autofocus
-          label={translate("login.email")}
-          type="email"
-          name="email"
-          values={values}
-          setValues={setValues}
-        />
+        <div className="login-input">
+          <FormTextField
+            autofocus
+            label={translate("login.email")}
+            type="email"
+            name="email"
+            values={values}
+            setValues={setValues}
+          />
 
-        <FormTextField
-          label={translate("login.password")}
-          type="password"
-          name="password"
-          values={values}
-          setValues={setValues}
-        />
+          <FormTextField
+            label={translate("login.password")}
+            type="password"
+            name="password"
+            values={values}
+            setValues={setValues}
+          />
+        </div>
+
         {error && <div className="form-error">{error}</div>}
-
-        <Button onClick={handleSubmit}>{translate("login.submit")}</Button>
+        <div className="login-button">
+          <Button onClick={handleSubmit}>{translate("login.submit")}</Button>
+        </div>
       </FormCard>
     </div>
   );
